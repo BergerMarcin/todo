@@ -1,3 +1,22 @@
+## Założenie tego projektu
+Aby założyć ten projekt użyto:
+```
+npx create-react-app todo
+npm i --save redux redux-thunk redux-logger redux-devtools-extension react-redux react-router-dom
+```
+
+W przypadku konfliktów z paczkami:
+```
+npm audit fix --force
+```
+
+Paweł Wong doradzał jeszcze `Jak by ktos dostawal dziwne bledy fetchowania przy npm i`:
+```
+npm cache clean --force
+```
+<hr/>
+<hr/>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
