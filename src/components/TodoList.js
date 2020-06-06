@@ -13,10 +13,11 @@ const TodoList = ({todos, addTodo, changeStatus, deleteTodo}) => {
           <li key={index}>
             {t.title}, status: {t.status}
             <button onClick={() => changeStatus(STATUS.inprogress, t.title)}>In Progress</button>
-            <button onClick={() => changeStatus(STATUS.close, t.title)}>Closed</button>
+            <button onClick={() => changeStatus(STATUS.closed, t.title)}>Closed</button>
             <button onClick={() => deleteTodo(t.title)}>Delete</button>
         </li>)}
       </ul>
+      <h1>Add new ToDo:</h1>
       <AddToDo add={addTodo}/>
     </div>
   );

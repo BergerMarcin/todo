@@ -1,18 +1,22 @@
 import React from 'react';
-import {Provider} from 'react-redux';
 import store from "./redux/store"
-import TodoList from "./containers/TodoList";
+import {Provider} from 'react-redux';
 import {HashRouter, Switch, Route} from "react-router-dom";
 import Nav from "./components/Nav";
+import TodoList from "./containers/TodoList";
+import Euro from "./containers/Euro";
 
 
 function App() {
   return (
     <Provider store={store}>
       <HashRouter>
-        <Nav />
+        <Nav/>
+        <hr/>
         <Switch>
-          <Route exact path='/:status?' component={TodoList}/>   // ? powoduje, że status jest opcjponalny
+          <Route exact path={'/'} component={TodoList}/>
+          <Route exact path={'/todo/:status?'} component={TodoList}/>
+          <Route path={'/eur'} component={Euro}/>
         </Switch>
       </HashRouter>
     </Provider>

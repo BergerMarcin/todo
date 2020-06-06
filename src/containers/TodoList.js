@@ -5,10 +5,8 @@ import {STATUS} from "../redux/reducers/todo";
 
 const validData = Object.values(STATUS);
 
-console.log(validData);
 const mapStateToProps = (state, ownProps) => {
-  const status = ownProps.match.params.status;
-
+  let status = validData.includes(ownProps.match.params.status) ? ownProps.match.params.status : null;
   return ({
     todos: state.todo.filter(todo => status ? todo.status === ownProps.match.params.status : true)
   })

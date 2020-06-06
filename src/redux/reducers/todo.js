@@ -3,13 +3,13 @@ import { ADD_TODO, CHANGE_STATUS, DELETE_TODO } from "../actions/todoAction"
 export const STATUS = {
   start: 'start',
   inprogress: 'inprogress',
-  close: 'close'
+  closed: 'closed'
 }
 
 const initialState = [
   {
     title: 'Umyć naczynia',
-    status: STATUS.close,
+    status: STATUS.closed,
   }
 ];
 
