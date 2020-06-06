@@ -1,31 +1,27 @@
-import api from "../../api";
-
 const FETCHING_START = "FETCHING_START";
 const FETCHING_DONE = "FETCHING_DONE";
 const FETCHING_ERROR = "FETCHING_ERROR";
+
 
 const fetchingStart = () => ({
   type: FETCHING_START
 });
 
-const fetchingDone = (result) => ({
+const fetchingDone = (apiResponseJson,) => ({
   type: FETCHING_DONE,
-  payload: result,
+  payload: {
+    buyRate: apiResponseJson.rates[0].bid,
+    sellRate: apiResponseJson.rates[0].ask,
+  },
 });
 
-const fetchingError = (error) => ({
+const fetchingError = (apiError) => ({
   type: FETCHING_ERROR,
-  payload: error,
+  payload: apiError,
 });
 
 
-const getEuroRates = () => (dispatch) => {
-  dispatch(fetchingStart());
-  api.euroRates()
-    .then(response => dispatch(fetchingDone(response)))
-    .catch(err => dispatch(fetchingError(err)));
+export {
+  FETCHING_START, FETCHING_DONE, FETCHING_ERROR,
+  fetchingStart, fetchingDone, fetchingError
 };
-
-
-export {FETCHING_START, FETCHING_DONE, FETCHING_ERROR,
-  fetchingStart, fetchingDone, fetchingError, getEuroRates};

@@ -4,8 +4,8 @@ import {FETCHING_START, FETCHING_DONE, FETCHING_ERROR} from '../actions/euroActi
 const initialState = {
   loading: false,
   result: {
-    buyRate: 0,
-    sellRate: 0,
+    buyRate: '',
+    sellRate: '',
   },
   error: "",
 };

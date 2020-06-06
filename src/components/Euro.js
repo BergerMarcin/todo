@@ -1,7 +1,6 @@
 import React from "react";
 
 export default ({euroBuyRate, euroSellRate, getEuroRates}) => {
-
   return (
     <>
       <h1>EUR rate at currency exchange</h1>
