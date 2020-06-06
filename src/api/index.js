@@ -5,7 +5,7 @@ export const API_DATA = {
 };
 
 export const api = {
-  getEuroRates: () => (dispatch) => {
+  euroRates: () => (dispatch) => {
     dispatch(fetchingStart());
     fetch(API_DATA.euroRates)
       .then(response => response.json())

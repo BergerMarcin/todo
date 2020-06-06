@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getEuroRates: () => dispatch(api.getEuroRates()),
+  getEuroRates: () => dispatch(api.euroRates()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Euro);
