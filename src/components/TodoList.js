@@ -2,12 +2,11 @@ import React from "react";
 import AddToDo from './AddToDo'
 import {STATUS} from "../redux/reducers/todo";
 
+
 const TodoList = ({todos, addTodo, changeStatus, deleteTodo}) => {
   return (
     <div>
       <h1>My TODO list</h1>
-      {/*  iterujemy todos */}
-      {console.log(todos)}
       <ul>
         {todos.map((t, index) =>
           <li key={index}>

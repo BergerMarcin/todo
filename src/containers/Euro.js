@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import Euro from "../components/Euro";
+import {getEuroRates} from "../redux/actions/euroActions";
 
 
 const mapStateToProps = (state) => {
@@ -10,4 +11,8 @@ const mapStateToProps = (state) => {
   });
 }
 
-export default connect(mapStateToProps)(Euro);
+const mapDispatchToProps = (dispatch) => ({
+  getEuroRates: () => dispatch(getEuroRates()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Euro);
